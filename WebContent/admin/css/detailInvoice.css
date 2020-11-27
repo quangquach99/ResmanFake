@@ -1,0 +1,197 @@
+#invoice-id {
+    text-align: center;
+    margin: 14px 0;
+}
+#invoice-id span {
+    color: tomato;
+}
+#invoice {
+    width: 60%;
+    height: auto;
+    border: 1px solid tomato;
+    margin: 0px 20%;
+    float: left;
+    padding: 24px 14px;
+}
+#invoice-info {
+    width: 60%;
+    float: left;
+}
+#invoice-info h2 {
+    font-size: 26px;
+    letter-spacing: 4px;
+    text-align: center;
+}
+#invoice-info p {
+    color: grey;
+    text-align: center;
+    font-size: 14px;
+}
+#invoice-info span {
+    color: black;
+}
+#invoice-info #logo {
+    width: 40%;
+    float: left;
+}
+#logo a {
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-align: center;
+    background-color: black;
+}
+#logo h1 {
+    color: #FF3915;
+    font-size: 30px;
+}
+#logo span {
+    color: black;
+}
+#billing-to {
+    font-weight: bold;
+    font-size: 15px;
+}
+#customer-info {
+    float: left;
+    width: 100%;
+    margin: 14px 24px;
+    letter-spacing: 1px;
+}
+#customer-info p {
+    font-size: 13px;
+    color: grey;
+}
+table {
+    width: 100%;
+    letter-spacing: 1px;
+    border-bottom: 2px solid grey;
+}
+table, th, td {
+    border-collapse: collapse;
+}
+th {
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+    font-size: 16px;
+    padding: 9px 0;
+    color: tomato;
+}
+td {
+    border-bottom: 1px solid grey;
+    padding: 14px 0;
+    font-size: 12px;
+}
+th, .in-order, .total, .quantity, .time-format {
+    text-align: center;
+}
+.in-order {
+    width: 10%;
+}
+.time-format {
+    width: 15%;
+}
+.quantity, .total {
+    width: 10%;
+}
+.dish-info {
+    width: 55%;
+}
+#dishImg {
+    width: 60%;
+    float: left;
+    text-align: center;
+}
+#dishImg img {
+    width: 150px;
+}
+#description {
+    width: 40%;
+    float: left;
+}
+#description p {
+    font-size: 12px;
+}
+#description p span {
+    font-size: 14px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+#payment-method, #grand-total {
+    width: 50%;
+    float: left;
+    padding: 24px 0;
+
+}
+#payment-method span {
+    color: green;
+    font-size: 14px;
+}
+#payment-method i {
+    color: tomato;
+    font-size: 18px;
+    margin-left: 9px;
+}
+#grand-total p {
+    float: left;
+}
+#grand-total span {
+    float: right;
+}
+#sub-total, #discount, #grand {
+    width: 100%;
+    float: left;
+    margin: 4px 0;
+    padding: 4px 14px;
+}
+#sub-total, #discount {
+    font-size: 14px;
+} 
+#sub-total p, #discount p, #grand p {
+    float: left;
+    width: 50%;
+}
+#discount {
+    color: tomato;
+}
+#grand {
+    background-color: green;
+    color: white;
+    font-size: 16px;
+}
+#thanks {
+    float: left;
+    width: 100%;
+    color: grey;
+    font-size: 16px;
+    border-bottom: 2px solid grey;
+}
+#contacts {
+    width: 100%;
+    float: left;
+    margin: 14px 0 0 0;
+}
+#contacts p {
+    font-size: 12px;
+    display: inline-block;
+    border-right: 2px solid grey;
+    margin-right: 14px;
+    padding-right: 14px;
+}
+#contacts p:last-child {
+    border: none;
+}
+#print {
+    position: fixed;
+    bottom: 84px;
+    right: 84px;
+    width: 80px;
+    height: 40px;
+    color: white;
+    background-color: tomato;
+    letter-spacing: 1px;
+    transition: .4s;
+}
+#print:hover {
+    text-shadow: 0 0 9px white;
+    box-shadow: 0 0 9px 4px tomato;
+}

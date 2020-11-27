@@ -1,0 +1,75 @@
+h3 {
+    text-align: center;
+    margin: 24px;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+h3 span {
+    text-decoration: underline;
+    color: tomato;
+}
+table {
+    letter-spacing: 1px;
+}
+tr, th, td {
+    border: 2px solid grey;
+}
+th, .in-order, .action, .dish-revenue {
+    text-align: center;
+}
+table {
+    width: 90%;
+    margin: 14px 5%;
+}
+tr {
+    width: 100%;
+}
+.in-order {
+    width: 10%;
+}
+.action {
+    width: 15%;
+}
+.dish-revenue {
+    width: 15%;
+}
+th {
+    font-size: 18px;
+    padding: 9px 0;
+    color: tomato;
+}
+td {
+    padding: 14px 0;
+}
+#dishImg {
+    width: 60%;
+    float: left;
+    text-align: center;
+/*     border-right: 2px solid grey; */
+}
+#dishImg img {
+    width: 250px;
+}
+#description {
+    width: 40%;
+    float: left;
+}
+#description p {
+/*     margin-left: 24px; */
+    font-size: 16px;
+}
+#description p span {
+    font-size: 14px;
+    text-decoration: underline;
+}
+.action a {
+    text-decoration: none;
+    color: white;
+    background-color: tomato;
+    padding: 9px 14px;
+    transition: .4s;
+}
+.action a:hover {
+    text-shadow: 0 0 9px white;
+    background-color: #FF2700;
+}

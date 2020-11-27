@@ -1,0 +1,44 @@
+h3 {
+    text-align: center;
+    margin: 24px;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+h3 span {
+    text-decoration: underline;
+    color: tomato;
+}
+#dish-info {
+    float: left;
+    width: 50%;
+    margin: 0 25%;
+    padding: 14px;
+    border-bottom: 2px solid grey;
+}
+#dishImg, #dish-description {
+    float: left;
+    width: 50%;
+}
+#dishImg img {
+    width: 250px;
+}
+#orderedTimes {
+    float: left;
+    width: 40%;
+    margin: 0 30%;
+    text-align: center;
+}
+.row {
+    border-bottom: 1px solid grey;
+    margin: 14px 0 0 0;
+}
+#orderedTimes a {
+    color: tomato;
+    cursor: pointer;
+    font-size: 16px;
+    transition: .4s;
+    text-decoration: none;
+}
+#orderedTimes a:hover {
+	text-shadow: 0 0 9px tomato;
+}

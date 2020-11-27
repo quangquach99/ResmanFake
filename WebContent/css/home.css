@@ -1,0 +1,236 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Oswald", arial;
+}
+/*Container*/
+.container {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	background-image: url(../images/background3.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 9;
+}
+#overlay {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	background: black;
+	opacity: .5;
+	z-index: 10;
+}
+/*Open Time*/
+.days {
+	font-size: 24px;
+	color: #F0F0F0;
+}
+.time {
+	color: #CEC0C0;
+	text-transform: uppercase;
+	font-weight: 16px;
+}
+.open-time {
+	position: absolute;
+	bottom: 24px;
+	left: 34px;
+	height: auto;
+	z-index: 11;
+}
+.time {
+	margin-bottom: 14px;
+}
+.open-time div {
+	float: left;
+	margin: 0 24px;
+}
+/*Contact*/
+.contact {
+	position: absolute;
+	bottom: 24px;
+	right: 58px;
+	z-index: 11;
+}
+#phone {
+	font-size: 24px;
+	color: #F0F0F0;
+	float: right;
+}
+#email, #address {
+	float: right;
+	font-size: 16px;
+	color: #CEC0C0;
+}
+span {
+	text-transform: uppercase;
+}
+/*Logo In The Center*/
+#logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 11;
+}
+
+/*Navigation*/
+#navigation {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: transparent;
+	z-index: 11;
+}
+#navigation a {
+	color: #EAE6E6;
+	font-size: 16px;
+	text-transform: uppercase;
+	border: 1px solid grey;
+	margin: 30px 20px;
+	text-align: center;
+	padding: 14px;
+	letter-spacing: 2px;
+	transition: .7s;
+	text-decoration: none;
+	display: block;
+}
+#navigation a:hover {
+	color: #414141;
+	background-color: #FFCF3E;
+}
+#reservationBox {
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	transform: translate(-50%,0%);
+	z-index: 14;
+	display: none;
+	background-color: #DF823F;
+}
+#reservationBox form {
+	margin: 0px 100px 40px 100px;
+}
+#reservationBox form select {
+	display: inline-block;
+	font-size: 14px;
+	padding: 7px 9px;
+	border: none;
+	outline: none;
+}
+#reservationBox form button {
+	padding: 7px 14px;
+	background-color: red;
+	outline: none;
+	border-radius: 7px;
+	border: none;
+	color: white;
+	font-size: 14px;
+	cursor: pointer;
+	transition: .4s;
+}
+#reservationBox form button:hover {
+	color: black;
+}
+#reservationBox h2 {
+	color: white;
+	text-align: center;
+	margin: 14px 0;
+}
+#closeBtn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 44px;
+	height: 44px;
+	cursor: pointer;
+}
+#successAlert {
+	background-color: #57F857;
+}
+#errorAlert {
+	background-color: tomato;
+}
+#successAlert, #errorAlert {
+	position: absolute;
+	top: 24px;
+	right: 24px;
+	z-index: 14;
+	color: white;
+	letter-spacing: 1px;
+	padding: 24px;
+	font-size: 14px;
+	font-weight: bold;
+}
+#closeSuccessAlert, #closeErrorAlert {
+	position: absolute;
+	top: -9px;
+	right: -9px;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+}
+#checkedIcon, #errorImg {
+	width: 24px;
+	height: 24px;
+	margin-bottom: -7px;
+	margin-right: 7px;
+}
+/*Order Box*/
+#orderBox {
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	transform: translate(-50%,0%);
+	z-index: 14;
+	display: none;
+	background-color: tomato;
+}
+#orderBox form {
+	margin: 0px 100px 40px 100px;
+}
+#orderBox form input {
+	border-radius: 7px;
+	width: 300px;
+	font-size: 14px;
+	padding: 7px 9px;
+	border: none;
+	outline: none;
+	transition: .4s;
+	outline: none;
+}
+#orderBox form input:focus {
+	box-shadow: 0 0 14px white;
+}
+#orderBox form button {
+	padding: 7px 14px;
+	background-color: black;
+	outline: none;
+	border-radius: 7px;
+	border: none;
+	color: white;
+	font-size: 14px;
+	cursor: pointer;
+	transition: .4s;
+}
+#orderBox form button:hover {
+	box-shadow: 0 0 4px 1px black;
+}
+#orderBox h2 {
+	color: white;
+	text-align: center;
+	margin: 14px 0;
+}
+#closeOrderBoxBtn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 44px;
+	height: 44px;
+	cursor: pointer;
+}

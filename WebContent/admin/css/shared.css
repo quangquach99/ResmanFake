@@ -1,0 +1,162 @@
+/*Reset All Settings*/
+* {
+	padding: 0;
+	margin: 0;
+	border: none;
+	font-family: "Oswald", arial;
+	box-sizing: border-box;
+}
+body {
+	width: 100%;
+	height: 100vh;
+}
+/* Header */
+#header {
+	height: 9vh;
+	width: 100%;
+	float: left;
+	border-bottom: 1px solid white;
+	background-color: #292929;
+}
+#header a {
+	letter-spacing: 2px;
+	text-decoration: none;
+}
+#header h1 {
+	color: #FF3915;
+	line-height: 8vh;
+	margin-left: 64px;
+}
+#header span {
+	color: white;
+}
+/* Navigation Bar */
+#navBar {
+	width: 15%;
+	height: 91%;
+	text-align: center;
+	float: left;
+	border-right: 1px solid white;
+	background-color: tomato;
+}
+.mr-7 {
+	margin-right: 7px;
+}
+.ml-40 {
+	position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translate(0%, -50%)
+}
+#navBar a {
+	display: block;
+	text-decoration: none;
+	color: white;
+	border-bottom: 1px solid white;
+	padding: 14px 0;
+	position: relative;
+	transition: .4s;
+}
+#navBar a:hover {
+	text-shadow: 0 0 17px white;
+	background-color: #FF6D53;
+}
+.dropdown-item {
+	display: none;
+    background-color: #FF3713;
+}
+.dropdown-btn:hover .dropdown-item {
+	display: block;
+}
+/*Overlay*/
+#overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: .7;
+	display: none;
+}
+/*DatePicker Form*/
+#datePicker {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%,0);
+	padding: 24px 34px;
+	background-color: tomato;
+	text-align: center;
+}
+#closeDatePickerBtn {
+	position: absolute;
+	top: 7px;
+	right: 9px;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+}
+#datePicker form input {
+	width: 350px;
+	padding: 9px 14px;
+	background-color: transparent;
+	color: white;
+	border: 1px solid white;
+	font-size: 14px;
+	margin-bottom: 24px;
+	display: block;
+	outline: none;
+	transition: .4s;
+}
+#datePicker form input:focus {
+	box-shadow: 0 0 9px 4px white;
+}
+#datePicker form button {
+	border: none;
+	color: white;
+	padding: 9px 24px;
+	background-color: black;
+	transition: .4s;
+}
+#datePicker form button:hover {
+	box-shadow: 0 0 7px 2px black;
+	text-shadow: 0 0 4px white;
+}
+#datePicker h2 {
+	color: white;
+	font-size: 28px;
+	margin-bottom: 14px;
+}
+#datePicker form label {
+	color: white;
+}
+/*Content*/
+#content {
+	float: left;
+	width: 85%;
+	height: 91vh;
+	overflow: auto;
+}
+/* Welcome */
+#welcome {
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%,0);
+	background-color: lightgreen;
+	padding: 34px 94px;
+	box-shadow: 0 0 14px 4px green;
+}
+#welcome p {
+	font-size: 24px;
+	color: white;
+	letter-spacing: 2px;
+}
+#welcome span {
+	font-size: 34px;
+	color: tomato;
+	font-weight: bold;
+	text-shadow: 0 0 3px;
+}
