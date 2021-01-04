@@ -11,6 +11,6 @@
 			<a href="#">Revenue By Something</a>
 		</div>
 	</div>
-	<a href="#"><i class="mr-7 fas fa-table"></i> Table</a>
+	<a href="${pageContext.request.contextPath}/Admin/Table"><i class="mr-7 fas fa-table"></i> Table</a>
 	<a href="${pageContext.request.contextPath}/Admin/Logout"><i class="mr-7 fas fa-sign-out-alt"></i> Log Out</a>
 </div>

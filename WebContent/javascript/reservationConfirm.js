@@ -26,7 +26,7 @@ function validateMyForm() {
 	var customerPhone = document.getElementById("customerPhone").value;
 	var customerFullnameRex = /^[a-zA-Z ]+$/;
 	var customerEmailRex = /^[a-zA-Z][a-zA-Z0-9_\.]{5,32}@[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,4}){1,2}$/;
-	var customerPhoneRex = /^0\d{9,}$/;
+	var customerPhoneRex = /^0\d{9}$/;
 	var customerAddressRex = /^[a-zA-Z0-9-_,&+ ]+$/;
 	if(!customerFullname.match(customerFullnameRex)) {
 		document.getElementById("errorMessage").innerHTML = "Your Full Name Is Invalid! Please Try Again!";

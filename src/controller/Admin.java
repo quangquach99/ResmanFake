@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,6 +22,8 @@ import dao.DishDao;
 import dao.LoginDao;
 import dao.OrderDao;
 import dao.ReservationDao;
+import dao.TableDao;
+import model.Table;
 import model.Dish;
 import model.Manager;
 import model.Order;
@@ -30,6 +33,10 @@ import model.RevenueByDish;
 @WebServlet("/")
 public class Admin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private TableDao tableDao;
+	public void init() {
+		tableDao = new TableDao();
+	}
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String[] uris = request.getRequestURI().split("/");
@@ -64,6 +71,55 @@ public class Admin extends HttpServlet {
 						 case "Logout":
 							 // LOGOUT ACTION
 							 logout(request, response);
+							 break;
+							 // LE MANH QUANG
+						 case "Table":
+								// LOGOUT ACTION
+							try {
+								listTable(request, response);
+							} catch (SQLException | IOException | ServletException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							break;
+						case "edit":
+							showEditForm(request, response);
+							break;
+						case "new":
+							showNewForm(request, response);
+							break;
+						case "insert":
+							try {
+								insertTable(request, response);
+							} catch (ServletException | IOException | SQLException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							break;
+						case "update":
+							try {
+								updateTable(request, response);
+							} catch (ServletException | IOException | SQLException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							break;
+						case "delete":
+							try {
+								deleteTable(request, response);
+							} catch (ServletException | IOException | SQLException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							break;
+						case "addDish":
+							 addDish(request, response);
+							 break;
+						 case "updateDish":
+							 updateDish(request, response);
+							 break;
+						 case "deleteDish":
+							 deleteDish(request, response);
 							 break;
 						 default:
 							// DASHBOARD PAGE
@@ -203,5 +259,92 @@ public class Admin extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	// LE MANH QUANG
+	private void listTable(HttpServletRequest request, HttpServletResponse response)
+		    throws SQLException, IOException, ServletException {
+		        List < Table > listTable = tableDao.selectAllTables();
+		        request.setAttribute("listTable", listTable);
+		        RequestDispatcher dispatcher = request.getRequestDispatcher("/tableList.jsp");
+		        dispatcher.forward(request, response);
+	}
+
+	private void showNewForm(HttpServletRequest request, HttpServletResponse response)
+		    throws ServletException, IOException {
+		        RequestDispatcher dispatcher = request.getRequestDispatcher("/tableFormAdd.jsp");
+		        dispatcher.forward(request, response);
+	}
+
+	private void showEditForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		        int tableId = Integer.parseInt(request.getParameter("tableId"));
+		        Table existingTable = tableDao.getTableById(tableId);
+		        request.setAttribute("Table", existingTable);
+		        RequestDispatcher dispatcher = request.getRequestDispatcher("/tableFormEdit.jsp");
+		        dispatcher.forward(request, response);
+	}
+
+	private void insertTable(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {		
+				int maximumOfPeople = Integer.parseInt(request.getParameter("maximumOfPeople"));
+		        String tableImage = request.getParameter("tableImage");
+		        int nearWindow = Integer.parseInt(request.getParameter("nearWindow"));
+		        float tablePrice = Float.parseFloat(request.getParameter("tablePrice"));
+		        Table table = new Table(maximumOfPeople,tableImage,nearWindow,tablePrice);
+		        tableDao.insertTable(table);
+		        response.sendRedirect("https://localhost/Resman/Admin/Table");       
+	}
+
+	private void updateTable(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+				int tableId = Integer.parseInt(request.getParameter("tableId"));
+				int maximumOfPeople = Integer.parseInt(request.getParameter("maximumOfPeople"));
+		        String tableImage = request.getParameter("tableImage");
+		        int nearWindow = Integer.parseInt(request.getParameter("nearWindow"));
+		        float tablePrice = Float.parseFloat(request.getParameter("tablePrice"));
+		        Table table = new Table(tableId, maximumOfPeople, tableImage, nearWindow, tablePrice);
+		        tableDao.updateTable(table);
+		        response.sendRedirect("https://localhost/Resman/Admin/Table");
+	}	        
+	private void deleteTable(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+		        int tableId = Integer.parseInt(request.getParameter("tableId"));
+		        tableDao.deleteTable(tableId);
+			    response.sendRedirect("https://localhost/Resman/Admin/Table");
+	}
+	
+	// Nguyen Van Hoang
+	private void addDish(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		DishDao dishDAO = new DishDao();
+		String dishName = request.getParameter("dishName");
+		int dishType = Integer.parseInt(request.getParameter("dishType"));
+		float dishPrice = Float.parseFloat(request.getParameter("dishPrice"));
+		Dish dish = new Dish(dishName,dishType,dishPrice);
+		boolean insertNewReservation =dishDAO.insertDish(dish);
+		if(insertNewReservation) {
+			response.sendRedirect("Home?success=0001");
+		} else {
+			response.sendRedirect("Home?error=0002");
+		}
+	}
+
+	private void updateDish(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		DishDao dishDAO = new DishDao();
+		String dishName = request.getParameter("dishName");
+		int dishType = Integer.parseInt(request.getParameter("dishType"));
+		float dishPrice = Float.parseFloat(request.getParameter("dishPrice"));
+		int dishId = Integer.parseInt(request.getParameter("dishId"));
+		Dish dish = new Dish(dishName,dishType,dishPrice);
+		dish.setDishId(dishId);
+		boolean insertNewReservation =dishDAO.updateDish(dish);
+		if(insertNewReservation) {
+			response.sendRedirect("Home?success=0001");
+		} else {
+			response.sendRedirect("Home?error=0002");
+		}
+		
+	}
+	private void deleteDish(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		DishDao dishDAO = new DishDao();
+		int dishId = Integer.parseInt(request.getParameter("dishId"));
+        dishDAO.deledteDish(dishId);
+	    response.sendRedirect("http://localhost/Resman/Admin/Table");
 	}
 }

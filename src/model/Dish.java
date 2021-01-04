@@ -8,6 +8,23 @@ public class Dish {
 	private float dishPrice;
 	
 	public Dish() {}
+	// NGUYEN VAN HOANG
+	public Dish( String dishName, int dishType, float dishPrice) {
+		super();
+		
+		this.dishName = dishName;
+		this.dishType = dishType;
+		this.dishPrice = dishPrice;
+	}
+	
+	public Dish(String dishName, String dishImage, int dishType, float dishPrice) {
+		super();
+		
+		this.dishName = dishName;
+		this.dishImage = dishImage;
+		this.dishType = dishType;
+		this.dishPrice = dishPrice;
+	}
 	
 	public Dish(int dishId, String dishName, String dishImage, int dishType, float dishPrice) {
 		super();

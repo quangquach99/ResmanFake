@@ -17,6 +17,14 @@ public class Table {
 		this.nearWindow = nearWindow;
 		this.tablePrice = tablePrice;
 	}
+	
+	public Table(int maximumOfPeople, String tableImage, int nearWindow, float tablePrice) {
+		super();
+		this.maximumOfPeople = maximumOfPeople;
+		this.tableImage = tableImage;
+		this.nearWindow = nearWindow;
+		this.tablePrice = tablePrice;
+	}
 
 	public int getTableId() {
 		return tableId;
